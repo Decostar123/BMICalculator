@@ -4,7 +4,7 @@ const dataSlice = createSlice(
     {
     name : "data"  , 
     initialState :{
-        cost : 0 , 
+        cost : "" , 
         rate : 0 , 
         fee : 0 , 
         payment : 0, 
@@ -33,13 +33,13 @@ const dataSlice = createSlice(
             state.loan = Number(payload.payload) ; 
             let principal = state.cost - state.payment ; 
             let loan = principal*1.01 ; 
-            let tenure = state.tenure ; 
-            let rate = state.rate ;
-            let num = loan*rate*( (1+rate)^tenure ) ; 
-            let den = (1+rate)^(tenure-1 ) ; 
+            let tenure = state.tenure/12 ; 
+            let rate = state.rate / 100 ;
+            let num = loan*rate*( (1+rate)**tenure ) ; 
+            let den = (1+rate)**(tenure-1 ) ; 
             let emi = num/den ; 
 
-            state.loan = emi; 
+            state.loan = emi.toFixed(0); 
 
 
          }, 

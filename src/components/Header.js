@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <div>
         <h3>Total Cost of Asset</h3>
-        <input type="number" value={cost} onChange={(e)=> {
+        <input type="number" value={cost} placeholder='0' onChange={(e)=> {
           console.log( typeof e.target.value ) ; 
           dispatch(setCost(e.target.value)) ; 
           dispatch( setLoan()) ; 

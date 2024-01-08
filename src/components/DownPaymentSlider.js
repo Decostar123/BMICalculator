@@ -16,7 +16,7 @@ const DownPaymentSlider = () => {
     <div>
     <h4>Down Payment</h4>
     <h3><span>Total Down Payment - ₹ {payment}</span></h3>
-    <input type="range" min="1" max={cost}
+    <input type="range" min="1" max={cost} placeholder='0'
      value={payment} className="slider" id="myRange" 
       onChange={(e)=>{
         // console.log( typeof e.target.value ) ; 
